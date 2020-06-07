@@ -1,5 +1,5 @@
 export interface Banda{
-
+  id:number,
   nombre:string,
   origen:string,
   historia:string,

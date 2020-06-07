@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Banda } from 'src/app/model/banda';
+import { BandasService } from 'src/app/services/bandas.service';
 
 @Component({
   selector: 'app-bandas',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BandasComponent implements OnInit {
 
-  constructor() { }
+  bandas:Array<Banda> = [];
+
+  constructor(private bandasService:BandasService) { }
 
   ngOnInit(): void {
+
+    this.bandas = this.bandasService.obtenerBandas();
+    console.log(this.bandas, "Cargando el Servicio");
+
   }
 
 }

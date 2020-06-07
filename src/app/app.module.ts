@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { BandasComponent } from './components/bandas/bandas.component';
 import { BandaDetalleComponent } from './components/banda-detalle/banda-detalle.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BandasComponent,
     BandaDetalleComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
