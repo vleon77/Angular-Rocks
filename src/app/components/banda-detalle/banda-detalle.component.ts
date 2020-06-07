@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Banda } from 'src/app/model/banda';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BandasService } from 'src/app/services/bandas.service';
-import { Location } from '@angular/common';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-banda-detalle',
@@ -16,7 +17,8 @@ export class BandaDetalleComponent implements OnInit {
   constructor(
     private route:ActivatedRoute,
     private bandasService:BandasService,
-    private location:Location
+    private router:Router
+
     ) { }
 
   ngOnInit(): void {
@@ -24,13 +26,35 @@ export class BandaDetalleComponent implements OnInit {
     this.getHero();
   }
 
+  //Cargar una banda
+
   getHero():void{
 
     const id:number = +this.route.snapshot.paramMap.get('id');
-    console.log(id);
     this.banda = this.bandasService.obtenerBanda(id)
-    console.log(this.banda);
+  }
 
+  borrarBanda(id:number){
+    Swal.fire({
+      title: 'Deseas Eliminar esta Banda?',
+      text: "Seguro es muy buena banda",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, Eliminar'
+    }).then((result) => {
+      if (result.value) {
+        console.log(id);
+        this.bandasService.borrarBanda(id);
+        Swal.fire(
+          'Eliminada!',
+          `${this.banda.nombre} no sonara más!`,
+          'success'
+        )
+        this.router.navigateByUrl('/bandas');
+      }
+    });
 
 
   }

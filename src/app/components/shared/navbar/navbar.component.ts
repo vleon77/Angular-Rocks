@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Banda } from 'src/app/model/banda';
+import { BandasService } from 'src/app/services/bandas.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+  }
+  buscarBanda(texto:string){
+    console.log(texto);
+    this.router.navigate(['/buscar',texto]);
   }
 
 }

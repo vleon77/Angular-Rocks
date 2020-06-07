@@ -7,6 +7,8 @@ import { BandasComponent } from './components/bandas/bandas.component';
 import { BandaDetalleComponent } from './components/banda-detalle/banda-detalle.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
+import { BuscadorComponent } from './components/buscador/buscador.component';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { HomeComponent } from './components/home/home.component';
     BandasComponent,
     BandaDetalleComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    BuscadorComponent,
+    DomseguroPipe
   ],
   imports: [
     BrowserModule,

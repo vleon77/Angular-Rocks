@@ -17,7 +17,7 @@ export class BandasService {
     periodo:'1962-presente',
     sitioWeb:'http://www.rollingstones.com',
     foto:'assets/images/rollingStone.jpg',
-    video:'https://www.youtube.com/watch?v=ZRXGsPBUV5g',
+    video:'https://www.youtube.com/embed/ZRXGsPBUV5g',
   },
   {
     id:2,
@@ -30,7 +30,7 @@ export class BandasService {
     periodo:'1968-1980',
     sitioWeb:'http://www.ledzeppelin.com',
     foto:'assets/images/ledZeppelin.jpeg',
-    video:'https://www.youtube.com/watch?v=xbhCPt6PZIU'
+    video:'https://www.youtube.com/embed/xbhCPt6PZIU'
   },
   {
     id:3,
@@ -42,7 +42,7 @@ export class BandasService {
     periodo:'1970-presente',
     sitioWeb:'http://www.queenonline.com/es/',
     foto:'assets/images/Queen.jpg',
-    video:'https://www.youtube.com/watch?v=MEEJOZkmIxU'
+    video:'https://www.youtube.com/embed/MEEJOZkmIxU'
   },
   {
     id:4,
@@ -54,7 +54,7 @@ export class BandasService {
     periodo:'1965-1995',
     sitioWeb:'http://www.pinkfloyd.com/',
     foto:'assets/images/pinkFloyd.jpg',
-    video:'https://www.youtube.com/watch?v=xBQsQoGodPY'
+    video:'https://www.youtube.com/embed/xBQsQoGodPY'
   },
   {
     id:5,
@@ -66,7 +66,7 @@ export class BandasService {
     periodo:'1968-1976 , 1984-presente',
     sitioWeb:'http://www.deeppurple.com/',
     foto:'assets/images/deepPurple.jpg',
-    video:'https://www.youtube.com/watch?v=ikGyZh0VbPQ'
+    video:'https://www.youtube.com/embed/ikGyZh0VbPQ'
   },
   {
     id:6,
@@ -78,7 +78,7 @@ export class BandasService {
     periodo:'1973-presente',
     sitioWeb:'http://www.acdc.com',
     foto:'assets/images/acdc.jpg',
-    video:'https://www.youtube.com/watch?v=n_GFN3a0yj0'
+    video:'https://www.youtube.com/embed/n_GFN3a0yj0'
   },
   {
     id:7,
@@ -91,7 +91,7 @@ export class BandasService {
     periodo:'1974-1996',
     sitioWeb:'https://www.ramones.com',
     foto:'assets/images/ramones.jpg',
-    video:'https://www.youtube.com/watch?v=YpL0qAEyO60'
+    video:'https://www.youtube.com/embed/YpL0qAEyO60'
 
   },
   {
@@ -104,21 +104,48 @@ export class BandasService {
     periodo:'1973-presente',
     sitioWeb:'http://www.kissonline.com',
     foto:'assets/images/kiss.jpg',
-    video:'https://www.youtube.com/watch?v=67KkjVMllS0'
+    video:'https://www.youtube.com/embed/67KkjVMllS0'
 
   }]
 
-  constructor() { }
+  constructor() {
+
+  }
 
 //Regresa el arreglo completo de bandas
   obtenerBandas():Array<Banda>{
-    return this.bandas
+    return this.bandas;
   }
 //Regresa una banda
   obtenerBanda(id:number){
     return this.bandas.find(banda => banda.id === id);
+  }
 
+  //Buscar una Banda
+  buscarBanda(texto:string):Array<Banda>{
 
+    let arrBandas:Array<Banda> = [];
+    texto = texto.toLowerCase();
+    for(let banda of this.bandas){
+      let nombre:string = banda.nombre.toLocaleLowerCase();
+
+      if(nombre.indexOf(texto)>=0){
+        arrBandas.push(banda);
+      }
+    }
+    return arrBandas;
+  }
+
+//Agregar una Banda
+  agregarBanda(banda:Banda){
+
+    this.bandas.push(banda);
+  }
+//Borrar una Banda
+  borrarBanda(id:number){
+    let arreglo:Array<Banda> =[]
+    arreglo = this.bandas.filter(banda => banda.id!==id);
+    this.bandas = [...arreglo];
   }
 
 

@@ -16,9 +16,9 @@
                 <a class="nav-link" href="#">Agregar Banda</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscar Banda" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        <form class="form-inline my-2 my-lg-0" onsubmit="return false">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar Banda" aria-label="Search" (keyup.enter)="buscarBanda(buscarTexto.value)" #buscarTexto>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="buscarBanda(buscarTexto.value)" #buscarTexto>Buscar</button>
         </form>
     </div>
 </nav>

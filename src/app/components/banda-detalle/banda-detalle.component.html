@@ -1,7 +1,29 @@
-<div class="card mb-3">
-    <img [src]="banda.foto" class="card-img-top" alt="">
+<div class="card mb-3 m-3">
+    <div class="card-Header">
+        <h2 class="card-title text-center">{{banda.nombre | uppercase}}</h2>
+    </div>
     <div class="card-body">
-        <h5 class="card-title">{{banda.nombre}}</h5>
-        <p class="card-text">{{banda.historia}}</p>
+        <img [src]="banda.foto" class="card-img" alt="foto/{{banda.nombre}}">
+        <ul class="list-group list-group-flush mt-1">
+            <li class="list-group-item"><strong>Origen:</strong> {{banda.origen}}</li>
+            <li class="list-group-item"><strong>Miembros:</strong> {{banda.miembros}}</li>
+            <li class="list-group-item"><strong>Periodo de Actividad1:</strong> {{banda.periodo}}</li>
+            <li class="list-group-item"><a class="card-link" href={{banda.sitioWeb}}>Sitio Web</a></li>
+            <li class="list-group-item">
+                <p class="text-justify">{{banda.historia}}</p>
+            </li>
+            <li class="list-group-item">
+                <div class="embed-responsive embed-responsive-21by9">
+                    <iframe class="embed-responsive-item" [src]="banda.video | domseguro" allowfullscreen></iframe>
+                </div>
+            </li>
+        </ul>
+        <div class="card-footer ">
+            <div class="d-flex justify-content-around">
+                <button class="btn btn-outline-secondary" routerLink="/bandas">Regresar a Bandas</button>
+                <button class="btn btn-outline-danger" (click)="borrarBanda(banda.id)">Eliminar esta banda</button>
+            </div>
+        </div>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
+</div>
