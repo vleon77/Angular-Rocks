@@ -36,7 +36,7 @@ export class BandaDetalleComponent implements OnInit {
 
   borrarBanda(id:number){
     Swal.fire({
-      title: '¿Deseas Eliminar esta Banda?',
+      title: '¿Deseas Eliminar Esta Banda?',
       text: "Seguro es muy buena banda",
       icon: 'warning',
       showCancelButton: true,
