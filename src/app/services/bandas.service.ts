@@ -7,12 +7,12 @@ import { Banda } from '../model/banda';
 })
 export class BandasService {
 
-  private bandas:Array<Banda> =[{
+  private datos:Array<Banda> =[{
     id:0,
     nombre:'The Rolling Stone',
     origen:'Londres, Inglaterra',
-    historia: `The Rolling Stones es una banda británica de rock originaria de Londres. La banda se formó en abril de 19622​ por Brian Jones, Mick Jagger, Keith Richards, Bill Wyman, Charlie Watts e Ian Stewart.2​ Brian Jones fue despedido en junio de 1969, falleciendo tres semanas después, siendo reemplazado por el guitarrista Mick Taylor, que dejaría el grupo en 1975 y sería a su vez reemplazado por Ronnie Wood. Con el retiro de Bill Wyman en 1993 se incluyó al bajista Darryl Jones que, aunque toca con la banda desde la grabación del álbum Voodoo Lounge en 1994, no es un miembro oficial.
-              Están considerados como una de las más grandes e influyentes bandas de toda la historia del rock, siendo una de las agrupaciones que sentó las bases del rock contemporáneo.4​5​6​ Contando desde sus inicios con el favor de la crítica, algunos de sus materiales están considerados de los mejores de todos los tiempos; entre ellos destacan Beggars Banquet (1968), Let It Bleed (1969), Sticky Fingers (1971) y quizá su mejor obra, Exile on Main St. (1972).nota 1​ En 1989 fueron incluidos en el Salón de la Fama del Rock and Roll, y en 2004 la revista estadounidense Rolling Stone los colocó en el puesto n.º 4 en su lista de Los 50 mejores artistas de todos los tiempos.11​ Ningún grupo de rock hasta la fecha ha sostenido tan duradera y todavía mundialmente reconocida trayectoria como The Rolling Stones; con Jagger, Richards y Watts como miembros fundadores en activo, continúan siendo la banda más longeva de la historia del rock.`,
+    historia: `The Rolling Stones es una banda británica de rock originaria de Londres. La banda se formó en abril de 19622​ por Brian Jones, Mick Jagger, Keith Richards, Bill Wyman, Charlie Watts e Ian Stewart.Brian Jones fue despedido en junio de 1969, falleciendo tres semanas después, siendo reemplazado por el guitarrista Mick Taylor, que dejaría el grupo en 1975 y sería a su vez reemplazado por Ronnie Wood. Con el retiro de Bill Wyman en 1993 se incluyó al bajista Darryl Jones que, aunque toca con la banda desde la grabación del álbum Voodoo Lounge en 1994, no es un miembro oficial.
+              Están considerados como una de las más grandes e influyentes bandas de toda la historia del rock, siendo una de las agrupaciones que sentó las bases del rock contemporáneo. Contando desde sus inicios con el favor de la crítica, algunos de sus materiales están considerados de los mejores de todos los tiempos; entre ellos destacan Beggars Banquet (1968), Let It Bleed (1969), Sticky Fingers (1971) y quizá su mejor obra, Exile on Main St. (1972).nota 1​ En 1989 fueron incluidos en el Salón de la Fama del Rock and Roll, y en 2004 la revista estadounidense Rolling Stone los colocó en el puesto n.º 4 en su lista de Los 50 mejores artistas de todos los tiempos.11​ Ningún grupo de rock hasta la fecha ha sostenido tan duradera y todavía mundialmente reconocida trayectoria como The Rolling Stones; con Jagger, Richards y Watts como miembros fundadores en activo, continúan siendo la banda más longeva de la historia del rock.`,
     miembros: 'Mick Jagger,Keith Richards,Charlie Watts,Ronnie Wood',
     periodo:'1962-presente',
     sitioWeb:'http://www.rollingstones.com',
@@ -107,9 +107,11 @@ export class BandasService {
     video:'https://www.youtube.com/embed/67KkjVMllS0'
 
   }]
+  private bandas:Array<Banda> = [];
 
   constructor() {
 
+    this.bandas = [...this.datos];
   }
 
 //Regresa el arreglo completo de bandas
@@ -147,8 +149,6 @@ export class BandasService {
     arreglo = this.bandas.filter(banda => banda.id!==id);
     this.bandas = [...arreglo];
   }
-
-
 }
 
 

@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Banda } from 'src/app/model/banda';
 import { BandasService } from 'src/app/services/bandas.service';
 import Swal from 'sweetalert2'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-agregar-banda',
@@ -16,7 +17,8 @@ export class AgregarBandaComponent implements OnInit {
 
   constructor(
               private formBuilder:FormBuilder,
-              private bandasService:BandasService
+              private bandasService:BandasService,
+              private router:Router
               ) {
 
     this.crearFormulario();
@@ -66,7 +68,7 @@ export class AgregarBandaComponent implements OnInit {
         control.markAllAsTouched();
       });
     }
-
+    //Inicializar el Objeto con los datos que vienen del formulario
     let banda:Banda ={
       id: Date.now(),
       nombre:this.forma.value.nombre,
@@ -88,6 +90,7 @@ export class AgregarBandaComponent implements OnInit {
       title: 'Guardado',
       text: 'Se ha guardo correctamente la banda',
     })
+    this.router.navigateByUrl('/bandas');
   }
 
 }

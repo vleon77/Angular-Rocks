@@ -12,6 +12,7 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
 import { DomseguroPipe } from './pipes/domseguro.pipe';
 import { AgregarBandaComponent } from './components/agregar-banda/agregar-banda.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { AgregarBandaComponent } from './components/agregar-banda/agregar-banda.
     HomeComponent,
     BuscadorComponent,
     DomseguroPipe,
-    AgregarBandaComponent
+    AgregarBandaComponent,
+
   ],
   imports: [
     BrowserModule,

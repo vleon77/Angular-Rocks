@@ -9,18 +9,20 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" routerLink="/home" routerLinkActive="active">Inicio</a>
+                <a class="nav-link escala" routerLink="/home" routerLinkActive="active">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/bandas" routerLinkActive="active">Bandas</a>
+                <a class="nav-link escala" routerLink="/bandas" routerLinkActive="active">Bandas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/agregar" routerLinkActive="active">Agregar Banda</a>
+                <a class="nav-link escala" routerLink="/agregar" routerLinkActive="active">Agregar Banda</a>
             </li>
         </ul>
+
         <form class="form-inline my-2 my-lg-0" onsubmit="return false">
             <input class="form-control mr-sm-2" type="search" placeholder="Buscar Banda" aria-label="Search" (keyup.enter)="buscarBanda(buscarTexto.value)" #buscarTexto>
-            <button class="btn btn-outline-secondary my-2 my-sm-0" type="button" (click)="buscarBanda(buscarTexto.value)" #buscarTexto>Buscar</button>
+            <button class="btn-sm btn-sm-block btn btn-outline-secondary  my-2 my-sm-0" type="button" (click)="buscarBanda(buscarTexto.value)" #buscarTexto>Buscar</button>
         </form>
+
     </div>
 </nav>
