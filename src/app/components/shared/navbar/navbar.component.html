@@ -1,5 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" routerLink="/home">
+        <img src="assets/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"> Angular Rocks!
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -13,12 +15,12 @@
                 <a class="nav-link" routerLink="/bandas" routerLinkActive="active">Bandas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Agregar Banda</a>
+                <a class="nav-link" routerLink="/agregar" routerLinkActive="active">Agregar Banda</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0" onsubmit="return false">
             <input class="form-control mr-sm-2" type="search" placeholder="Buscar Banda" aria-label="Search" (keyup.enter)="buscarBanda(buscarTexto.value)" #buscarTexto>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="buscarBanda(buscarTexto.value)" #buscarTexto>Buscar</button>
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="button" (click)="buscarBanda(buscarTexto.value)" #buscarTexto>Buscar</button>
         </form>
     </div>
 </nav>

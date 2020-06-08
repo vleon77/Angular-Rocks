@@ -14,10 +14,7 @@ export class BandasComponent implements OnInit {
   constructor(private bandasService:BandasService) { }
 
   ngOnInit(): void {
-
     this.bandas = this.bandasService.obtenerBandas();
-    console.log(this.bandas, "Cargando el Servicio");
-
   }
 
 }

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { DomseguroPipe } from './pipes/domseguro.pipe';
+import { AgregarBandaComponent } from './components/agregar-banda/agregar-banda.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,14 @@ import { DomseguroPipe } from './pipes/domseguro.pipe';
     NavbarComponent,
     HomeComponent,
     BuscadorComponent,
-    DomseguroPipe
+    DomseguroPipe,
+    AgregarBandaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

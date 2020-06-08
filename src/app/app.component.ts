@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Title,Meta} from '@angular/platform-browser'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular Rocks';
+  title = 'Angular Rocks!';
+
+  constructor(
+    private titulo:Title,
+    private meta:Meta
+    ){}
+
+  //Añadir Titulo y MetaTags
+    ngOnInit(): void {
+      this.titulo.setTitle(this.title);
+      this.meta.addTags([
+        {name: 'keywords', content: 'Angular, Rock, Bandas'},
+        {name: 'description', content: 'Angular Rocks!'},
+        {name: 'author', content: 'Victor León'},
+        {name: 'robots', content: 'index, follow'}
+      ]);
+
+    }
 }

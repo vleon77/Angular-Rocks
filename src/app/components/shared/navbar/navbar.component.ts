@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Banda } from 'src/app/model/banda';
-import { BandasService } from 'src/app/services/bandas.service';
+
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +8,8 @@ import { BandasService } from 'src/app/services/bandas.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
+  titulo:string;
 
   constructor(private router:Router) { }
 
