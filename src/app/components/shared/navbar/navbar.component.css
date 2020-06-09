@@ -13,4 +13,7 @@
     .escala:hover {
         transform: none;
     }
+    #boton {
+        width: 100%;
+    }
 }

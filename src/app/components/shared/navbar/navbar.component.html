@@ -21,7 +21,7 @@
 
         <form class="form-inline my-2 my-lg-0" onsubmit="return false">
             <input class="form-control mr-sm-2" type="search" placeholder="Buscar Banda" aria-label="Search" (keyup.enter)="buscarBanda(buscarTexto.value)" #buscarTexto>
-            <button class="btn-sm btn-sm-block btn btn-outline-secondary  my-2 my-sm-0" type="button" (click)="buscarBanda(buscarTexto.value)" #buscarTexto>Buscar</button>
+            <button id="boton" class="btn btn-outline-secondary  my-2 my-sm-0" type="button" (click)="buscarBanda(buscarTexto.value)" #buscarTexto>Buscar</button>
         </form>
 
     </div>
